@@ -2,19 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Build the website') {
+        stage('Build') {
             steps {
-                script {
-                    docker.build("website-image", "-f Dockerfile .")
-                }
+                echo 'Building..'
             }
         }
-        
         stage('Test') {
             steps {
-                sh './run-tests.sh'
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 0de42589412ba7dbea30a59c0e82a02a552f4a98
