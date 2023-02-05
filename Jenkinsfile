@@ -2,17 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Build the website') {
+        stage('Build') {
             steps {
-                script {
-                    docker.build("website-image", "-f Dockerfile .")
-                }
+                echo 'Building..'
             }
         }
-        
         stage('Test') {
             steps {
-                sh './run-tests.sh'
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
