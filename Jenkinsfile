@@ -1,10 +1,12 @@
 pipeline   {
-    agent any
-    stage  {
-      stage('Example') {
-        step {
-          echo 'Hello World'
-        }
+  agent {
+    dockerfile true
+  }
+  stage  {
+    stage('Example') {
+      step {
+        echo 'Hello World'
       }
     }
+  }
 }
